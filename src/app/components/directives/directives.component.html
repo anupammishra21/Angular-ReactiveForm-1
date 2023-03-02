@@ -1,0 +1,84 @@
+<!-- if else cnditin -->
+<!-- 1st -->
+<h1 *ngIf="show else elseblock ">
+  i am anupam
+
+</h1>
+<ng-template #elseblock>
+  <h1>else condition</h1>
+</ng-template>
+
+<!-- 2nd -->
+<h1 *ngIf="show; then ifblock else elseblock "></h1>
+
+<ng-template #ifblock>
+  <h1>if condition</h1>
+</ng-template>
+
+<ng-template #elseblock>
+  <h1>else condition</h1>
+</ng-template><hr>
+
+
+<!-- switch case -->
+
+<div [ngSwitch]="colorNew">
+  <h1 *ngSwitchCase="'green'">green color</h1>
+  <h1 *ngSwitchCase="'red'">red color</h1>
+  <h1 *ngSwitchCase="'pink'">pink color</h1>
+  <h1 *ngSwitchCase="'blue'">blue color</h1>
+  <h1 *ngSwitchDefault> Unknown color</h1>
+
+</div>
+<hr>
+
+<!-- for loop -->
+
+<h1 *ngFor="let data of users">
+  {{data}}
+
+
+</h1><hr>
+<div *ngFor="let item of personDetails">
+    <h2>name:{{item.name}}; age:{{item.age}}; gender:{{item.gender}}</h2>
+    
+
+</div><hr>
+
+<!-- nested loop -->
+
+<ul *ngFor="let datanew of personNewDetails">
+    <li>name:{{datanew.name}}</li>
+    <li>age:{{datanew.age}}</li>
+    <li>gender:{{datanew.gender}}</li>
+    <li>accounts</li>
+    <ul *ngFor="let acc of datanew.accounts">
+        <li>{{acc}}</li>
+
+    </ul>
+    
+
+</ul><hr>
+
+<!-- custom directive -->
+
+<h1 appCustom>i am custom directive</h1><hr>
+
+<!-- attribute directive ng style and ng class -->
+
+<!-- ng style -->
+
+<div [ngStyle]="myStyles">Hell world</div>
+
+
+<button (click)="addStyles()">add Styles</button>
+
+
+<!-- ng class -->
+
+<div [ngClass]="myClasses"></div>
+
+  <button (click)="changeShape()">change shape</button>
+
+
+

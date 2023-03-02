@@ -1,0 +1,8 @@
+.page-area{
+    width: 40%;
+    margin: 0 auto;
+    padding: 15px;
+    min-height: 400px;
+    text-align: center;
+    background-color: rgb(173, 211, 244);
+}

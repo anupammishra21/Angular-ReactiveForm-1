@@ -1,0 +1,49 @@
+<div class="page-area">
+  <h1>Reactive form</h1>
+  <p></p>
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-left bg-white rounded shadow py-3">
+      <form [formGroup]="regForm" (click)="submitData()">
+        <div class="form-group">
+          <label for="name" class="form-label">Name*</label>
+          <input type="text" class="form-control" id="name" placeholder="enter your name" name="name"
+            formControlName="name">
+        </div>
+
+
+        <div class="form-group">
+          <label for="Email" class="form-label">Email*</label>
+          <input type="email" class="form-control" id="email" placeholder="enter your email" name="email"
+            formControlName="email">
+        </div>
+
+
+
+
+
+
+        <div class="form-group">
+          <label for="password"> Enter Your Password</label>
+          <input type="password" id="password" placeholder="Enter your Password" name="password"
+            formControlName="password">
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</div>

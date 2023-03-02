@@ -1,0 +1,110 @@
+<div class="page-area">
+  <h1>Reactive form</h1>
+  <p></p>
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-left bg-white rounded shadow py-3">
+      <form [formGroup]="regForm" (submit)="dataSubmit()">
+        <div class="form-group">
+          <label for="firstname" class="form-label">FirstName*</label>
+          <input type="text" class="form-control" id="firstname" placeholder="enter your firstname" name="firstname"
+            formControlName="firstname">
+          <div *ngIf="regForm.get('firstname')?.touched">
+            <div *ngIf="regForm.get('firstname')?.hasError('required')"><span style="color: red;"> *required
+                Fields</span></div>
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="form-group">
+          <label for="Email" class="form-label">Email*</label>
+          <input type="email" class="form-control" id="email" placeholder="enter your email" name="email"
+            formControlName="email">
+        </div>
+
+
+
+        <div>
+          <button type="button" class="btn btn-info" (click)="addEmail()"> Add email </button>
+          <div formArrayName="altEmail" *ngFor="let item of altEmail.controls; let i = index" class="mt-3">
+            <input type="email" class="form-control" id="email" [formControlName]="i" placeholder="Alternative Email" />
+            <button type="button" class="btn btn-danger" (click)=" removeEmail(i)"> Remove </button>
+
+          </div>
+
+        </div>
+
+
+
+        <div>
+          <button class="btn btn-warning" (click)="addSkills()"> Add Skills </button>
+
+          <div formArrayName="altSkill" *ngFor="let item of altSkill.controls; let i = index" class="mt-3">
+            <div [formGroupName]="i">
+              <input type="text" class="form-control" id="Skills" formControlName="skill" placeholder=" Skill" />
+
+              <input type="text" class="form-control" id="exp" formControlName="exp" placeholder="exp" />
+
+              <button type="button" class="btn btn-danger" (click)=" removeSkills(i)"> Remove </button>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+        <div class="form-group">
+          <label for="password"> Enter Your Password</label>
+          <input type="password" id="password" placeholder="Enter your Password" name="password"
+            formControlName="password">
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <button  [disabled]="regForm.invalid" type="submit" class="btn btn-success">Submit</button>
+       
+        
+      </form>
+      <button   type="submit" class="btn btn-primary" (click)="rememberMe()">remember me</button>
+      <button   type="submit" class="btn btn-primary" (click)="resetForm()">Reset</button>
+    </div>
+  </div>
+ 
+
+
+
+</div>

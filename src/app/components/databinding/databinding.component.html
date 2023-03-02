@@ -1,0 +1,42 @@
+<!-- interpolation -->
+<h1>Name: {{name}}</h1><br>
+<h1>Name: {{name.length}}</h1><br>
+<h1>Name: {{name.toUpperCase()}}</h1><br>
+<h1>Name: {{name + " mishra"}}</h1><br>
+<h1>Name: {{method()}}</h1><br>
+<h1>my app status is: {{status ? "online":"offline"}}</h1><hr>
+
+
+
+<!-- property binding -->
+
+<input type="text"  [value]="name"><hr>
+
+<!-- event binding -->
+
+
+<button (click)="AddtoCart()"> clickMe</button>
+<h1>{{msg}}</h1><hr>
+
+<input type="text" value="anuam" (click)="onClick($event)"><hr>
+
+<button value="laptop" (click)="addedCart($event)">Laptop</button>
+<button value="mobile" (click)="addedCart($event)">mobile</button>
+<button value="watch" (click)="addedCart($event)">watch</button>
+
+<h1>{{show}}</h1><hr>
+
+
+<!-- two way data binding -->
+
+<input type="text" value="anupam"  [(ngModel)]="userName">
+<h3>{{userName}}</h3>
+
+<!-- template reference variable -->
+<input type="text" value="anupam" #reference>
+<button (click)="clickMe(reference)">click</button>
+
+
+
+
+
